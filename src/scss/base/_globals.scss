@@ -1,0 +1,45 @@
+@use './variables' as v;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html, body, #root {
+    touch-action: pan-y;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: v.$mist-yellow-tint-800;
+}
+
+a,
+button {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    touch-action: pan-y;
+}

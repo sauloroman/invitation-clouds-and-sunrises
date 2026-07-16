@@ -1,0 +1,26 @@
+@use '../base/variables' as v;
+
+.btn {
+
+    padding: 1.5rem 1rem;
+    width: 100%;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-radius: 100px;
+    transition: all .4s ease;
+
+    &--green {
+        font-weight: 700;
+        background-color: v.$light-capri-green-tint-400;
+        color: v.$purple-corallite-shade-600;
+    }
+
+    &--outline {
+        color: v.$purple-corallite-base;
+        background-color: transparent;
+        border: 1px solid currentColor;
+    }
+
+}
