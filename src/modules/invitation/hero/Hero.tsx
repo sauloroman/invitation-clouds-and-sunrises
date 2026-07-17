@@ -6,6 +6,7 @@ import mariposa2 from '@/assets/images/mariposa-2.png'
 import marco from '@/assets/images/marco-1.png'
 import globo1 from '@/assets/images/globo-amarillo.png'
 import globo2 from '@/assets/images/globo-verde.png'
+import globoColores from '@/assets/images/globo-colores.png'
 import estrella from '@/assets/images/estrella.png'
 
 export const Hero: React.FC = () => {
@@ -49,6 +50,25 @@ export const Hero: React.FC = () => {
                 <div className="hero__dot hero__dot--30"></div>
                 <div className="hero__dot hero__dot--31"></div>
                 <div className="hero__dot hero__dot--32"></div>
+            </motion.div>
+
+            {/* Upper corner colorful balloons */}
+            <motion.div
+                className="hero__corner-balloon hero__corner-balloon--left"
+                initial={{ opacity: 0, y: -100, x: -100, rotate: -35 }}
+                animate={{ opacity: 1, y: 0, x: 0, rotate: -15 }}
+                transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.6 }}
+            >
+                <img src={globoColores} alt="Globo Colores Esquina Izquierda" />
+            </motion.div>
+
+            <motion.div
+                className="hero__corner-balloon hero__corner-balloon--right"
+                initial={{ opacity: 0, y: -100, x: 100, rotate: 35 }}
+                animate={{ opacity: 1, y: 0, x: 0, rotate: 15 }}
+                transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.6 }}
+            >
+                <img src={globoColores} alt="Globo Colores Esquina Derecha" />
             </motion.div>
 
             <div className="hero__container">
@@ -112,7 +132,7 @@ export const Hero: React.FC = () => {
                         className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-left"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 0.85 }}
+                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 0.8 }}
                     >
                         <img className='hero__info-balloon hero__info-balloon--yellow-left' src={globo1} alt="Globo Amarillo Izquierda" />
                     </motion.div>
@@ -121,16 +141,25 @@ export const Hero: React.FC = () => {
                         className="hero__info-balloon-wrapper hero__info-balloon-wrapper--green-left"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 0.95 }}
+                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 0.9 }}
                     >
                         <img className='hero__info-balloon hero__info-balloon--green-left' src={globo2} alt="Globo Verde Izquierda" />
+                    </motion.div>
+
+                    <motion.div
+                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-left-lower"
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.0 }}
+                    >
+                        <img className='hero__info-balloon hero__info-balloon--yellow-left-lower' src={globo1} alt="Globo Amarillo Izquierda Abajo" />
                     </motion.div>
 
                     <motion.div
                         className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-right"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.05 }}
+                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.1 }}
                     >
                         <img className='hero__info-balloon hero__info-balloon--yellow-right' src={globo1} alt="Globo Amarillo Derecha" />
                     </motion.div>
@@ -139,9 +168,18 @@ export const Hero: React.FC = () => {
                         className="hero__info-balloon-wrapper hero__info-balloon-wrapper--green-right"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.15 }}
+                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.2 }}
                     >
                         <img className='hero__info-balloon hero__info-balloon--green-right' src={globo2} alt="Globo Verde Derecha" />
+                    </motion.div>
+
+                    <motion.div
+                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-right-lower"
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.3 }}
+                    >
+                        <img className='hero__info-balloon hero__info-balloon--yellow-right-lower' src={globo1} alt="Globo Amarillo Derecha Abajo" />
                     </motion.div>
                 </motion.div>
 
