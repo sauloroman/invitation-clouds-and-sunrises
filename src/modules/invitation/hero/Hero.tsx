@@ -1,13 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import numero from '@/assets/images/8.png'
 import mariposa from '@/assets/images/mariposa-1.png'
 import mariposa2 from '@/assets/images/mariposa-2.png'
 import marco from '@/assets/images/marco-1.png'
-import globo1 from '@/assets/images/globo-amarillo.png'
-import globo2 from '@/assets/images/globo-verde.png'
-import globoColores from '@/assets/images/globo-colores.png'
+import globos from '@/assets/images/globos.png'
 import estrella from '@/assets/images/estrella.png'
+import waveCorner from '@/assets/images/wave-corner.png'
 
 export const Hero: React.FC = () => {
     return (
@@ -52,14 +52,14 @@ export const Hero: React.FC = () => {
                 <div className="hero__dot hero__dot--32"></div>
             </motion.div>
 
-            <motion.div
-                className="hero__corner-balloon hero__corner-balloon--left"
-                initial={{ opacity: 0, y: -100, x: -100, rotate: -35 }}
-                animate={{ opacity: 1, y: 0, x: 0, rotate: -15 }}
-                transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.6 }}
-            >
-                <img src={globoColores} alt="Globo Colores Esquina Izquierda" />
-            </motion.div>
+            <div className="hero__back-wave">
+                <img src={waveCorner} alt="Onda Esquina" className="hero__wave-corner-img" />
+                <Link to="/" className="hero__back-btn" aria-label="Regresar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </Link>
+            </div>
 
             <div className="hero__container">
                 <motion.div
@@ -113,58 +113,24 @@ export const Hero: React.FC = () => {
                         <p className="hero__info-time">A las 3:00 p.m</p>
                     </div>
 
+                    {/* Group of balloons on the left */}
                     <motion.div
-                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-left"
+                        className="hero__info-balloon-group hero__info-balloon-group--left"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 0.8 }}
+                        transition={{ type: "spring", stiffness: 80, damping: 12, delay: 0.8 }}
                     >
-                        <img className='hero__info-balloon hero__info-balloon--yellow-left' src={globo1} alt="Globo Amarillo Izquierda" />
+                        <img className='hero__info-balloon-img' src={globos} alt="Globos Izquierda" />
                     </motion.div>
 
+                    {/* Group of balloons on the right */}
                     <motion.div
-                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--green-left"
+                        className="hero__info-balloon-group hero__info-balloon-group--right"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 0.9 }}
+                        transition={{ type: "spring", stiffness: 80, damping: 12, delay: 1.0 }}
                     >
-                        <img className='hero__info-balloon hero__info-balloon--green-left' src={globo2} alt="Globo Verde Izquierda" />
-                    </motion.div>
-
-                    <motion.div
-                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-left-lower"
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.0 }}
-                    >
-                        <img className='hero__info-balloon hero__info-balloon--yellow-left-lower' src={globo1} alt="Globo Amarillo Izquierda Abajo" />
-                    </motion.div>
-
-                    <motion.div
-                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-right"
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.1 }}
-                    >
-                        <img className='hero__info-balloon hero__info-balloon--yellow-right' src={globo1} alt="Globo Amarillo Derecha" />
-                    </motion.div>
-
-                    <motion.div
-                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--green-right"
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.2 }}
-                    >
-                        <img className='hero__info-balloon hero__info-balloon--green-right' src={globo2} alt="Globo Verde Derecha" />
-                    </motion.div>
-
-                    <motion.div
-                        className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-right-lower"
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 90, damping: 10, delay: 1.3 }}
-                    >
-                        <img className='hero__info-balloon hero__info-balloon--yellow-right-lower' src={globo1} alt="Globo Amarillo Derecha Abajo" />
+                        <img className='hero__info-balloon-img' src={globos} alt="Globos Derecha" />
                     </motion.div>
                 </motion.div>
 
