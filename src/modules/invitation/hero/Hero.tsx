@@ -12,7 +12,6 @@ import waveCorner from '@/assets/images/wave-corner.png'
 export const Hero: React.FC = () => {
     return (
         <div className='hero'>
-            {/* Dots background wrapped in a motion overlay for a smooth fade-in */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

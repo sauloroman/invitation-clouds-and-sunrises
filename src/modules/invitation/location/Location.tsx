@@ -49,7 +49,7 @@ export const Location: React.FC = () => {
 
                         <div className='locations__item'>
                             <span className='locations__item-title'>Salón</span>
-                            <span className='locations__item-name'>Jardín La Caballa</span>
+                            <span className='locations__item-name'>Jardín La Cabaña</span>
                             <span className='locations__item-address'>Vivero de La Floresta 906, Casa Blanca, 20297 Aguascalientes, Ags.</span>
                             <div className="locations__button">
                                 <button onClick={() => openExternalLink('https://maps.app.goo.gl/ggvCCCQ61RxehkXc6')} className='btn btn--green'>Ver Ubicación</button>
