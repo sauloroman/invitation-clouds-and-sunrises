@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
                 >
                     <img src={marco} alt="Marco" className="hero__info-img" />
                     <div className="hero__info-text">
-                        <p className="hero__info-month">Agosto</p>
+                        <p className="hero__info-month">Julio</p>
                         <p className="hero__info-day">24</p>
                         <p className="hero__info-weekday">Viernes</p>
                         <p className="hero__info-time">A las 3:00 p.m</p>

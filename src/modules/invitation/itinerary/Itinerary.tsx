@@ -41,7 +41,7 @@ const itinerary = [
         img: piñata
     },
     {
-        time: '07:00 P.M',
+        time: '08:00 P.M',
         title: 'Fin de la fiesta',
         description: 'Nos vamos',
         img: estrellaSad
@@ -95,11 +95,11 @@ export const Itinerary: React.FC = () => {
                             style={{ listStyle: 'none' }}
                         >
                             <div className="itinerary__item">
+                                <div className="itinerary__item-ribbon">{item.time}</div>
                                 <div className="itinerary__item-img">
                                     <img src={item.img} alt={item.title} />
                                 </div>
                                 <div className="itinerary__item-content">
-                                    <span>{item.time}</span>
                                     <p>{item.title}</p>
                                     <span>{item.description}</span>
                                 </div>

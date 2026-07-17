@@ -7,11 +7,11 @@ import nube from '@/assets/images/nube.png'
 
 export const Confirmation: React.FC = () => {
     const handleConfirmByMessage = () => {
-        window.open('https://wa.me/521234567890?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20fiesta%20de%20Layla%20Charlotte.%20🎈✨', '_blank');
+        window.open('https://wa.me/4491013099?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20fiesta%20de%20Layla%20Charlotte.%20🎈✨', '_blank');
     };
 
     const handleConfirmByPhone = () => {
-        window.open('tel:521234567890');
+        window.open('tel:4491013099');
     };
 
     const bounceTransition = {
@@ -48,7 +48,7 @@ export const Confirmation: React.FC = () => {
             </svg>
 
             {/* Animated Header texts */}
-            <motion.div 
+            <motion.div
                 className="confirmation__header"
                 initial={{ opacity: 0, y: -30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export const Confirmation: React.FC = () => {
 
             <div className="confirmation__container">
                 {/* Card 1: Confirm by message */}
-                <motion.div 
+                <motion.div
                     className="confirmation__marco-wrapper"
                     initial={{ opacity: 0, scale: 0.9, y: 40 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -84,7 +84,7 @@ export const Confirmation: React.FC = () => {
                 </motion.div>
 
                 {/* Card 2: Confirm by phone */}
-                <motion.div 
+                <motion.div
                     className="confirmation__marco-wrapper"
                     initial={{ opacity: 0, scale: 0.9, y: 40 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
