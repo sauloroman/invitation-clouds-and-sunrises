@@ -1,0 +1,226 @@
+@use '../../../scss/base/variables' as v;
+@use '../../../scss/base/mixins' as m;
+
+.itinerary {
+    position: relative;
+    padding: 6rem 2rem 16rem;
+    background-color: v.$lavender-sky-tint-800;
+
+    @media (max-width: 480px) {
+        padding-bottom: 22rem;
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+    }
+
+    &__container {
+        position: relative;
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+
+    &__icon {
+        width: 7rem;
+        height: auto;
+        margin: 0 auto 1rem;
+        display: block;
+        // Slight wobble to feel playful
+        animation: itinerary-wobble 3s ease-in-out infinite;
+    }
+
+    &__badge-wrapper {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    &__badge {
+        @include m.badge-title;
+
+        &-first {
+            @extend .itinerary__badge-first;
+        }
+
+        &-second {
+            @extend .itinerary__badge-second;
+        }
+    }
+
+    // ── List ─────────────────────────────────────────────────────────────
+    &__list {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+
+        li {
+            &:nth-child(odd) .itinerary__item {
+                animation: itinerary-float-odd 5s ease-in-out infinite;
+                border-left: 5px solid v.$purple-corallite-tint-400;
+                box-shadow: 4px 4px 0 v.$purple-corallite-tint-600;
+            }
+
+            &:nth-child(even) .itinerary__item {
+                animation: itinerary-float-even 5.5s ease-in-out infinite 0.5s;
+                border-left: 5px solid v.$light-capri-green-shade-200;
+                box-shadow: 4px 4px 0 v.$light-capri-green-tint-400;
+            }
+
+            &:nth-child(3n) .itinerary__item {
+                border-left-color: v.$pink-frosting-shade-200;
+                box-shadow: 4px 4px 0 v.$pink-frosting-tint-400;
+            }
+
+            &:nth-child(odd) .itinerary__item-img {
+                background-color: v.$lavender-sky-tint-400;
+            }
+
+            &:nth-child(even) .itinerary__item-img {
+                background-color: v.$light-capri-green-tint-600;
+            }
+
+            &:nth-child(3n) .itinerary__item-img {
+                background-color: v.$pink-frosting-tint-400;
+            }
+        }
+    }
+
+    // ── Card ─────────────────────────────────────────────────────────────
+    &__item {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        background-color: white;
+        border-radius: 2rem;
+        padding: 1.4rem 1.6rem;
+        padding-top: 3rem;
+
+        // ── Diagonal ribbon ───────────────────────────────────────────────
+        // The first <span> inside &-content is the time
+        &-ribbon {
+            position: absolute;
+            top: 1.6rem;
+            right: -2.6rem;
+            width: 10rem;
+            text-align: center;
+            font-family: v.$font-body;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: v.$purple-corallite-shade-400;
+            background-color: v.$butter-yellow-base;
+            padding: 0.35rem 0;
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+
+        // ── Icon bubble ────────────────────────────────────────────────────
+        &-img {
+            flex-shrink: 0;
+            width: 6.4rem;
+            height: 6.4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            img {
+                width: 4.6rem;
+                height: 4.6rem;
+                object-fit: contain;
+            }
+        }
+
+        // ── Text block ────────────────────────────────────────────────────
+        &-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+
+            // Time — now rendered via the .itinerary__item-ribbon element in JSX
+            &>span:first-child {
+                position: absolute;
+                top: 1.6rem;
+                right: -2.6rem;
+                width: 10rem;
+                text-align: center;
+                font-family: v.$font-body;
+                font-size: 1rem;
+                font-weight: 800;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                color: v.$purple-corallite-shade-400;
+                background-color: v.$butter-yellow-base;
+                padding: 0.35rem 0;
+                transform: rotate(45deg);
+                transform-origin: center;
+            }
+
+            // Activity title
+            p {
+                font-family: v.$font-heading;
+                font-size: 2.2rem;
+                font-weight: 700;
+                color: v.$purple-corallite-shade-200;
+                margin: 0;
+                line-height: 1.1;
+            }
+
+            // Description
+            &>span:last-child {
+                font-family: v.$font-body;
+                font-size: 1.4rem;
+                color: v.$purple-corallite-tint-200;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// Gentle float for the section icon
+@keyframes itinerary-wobble {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(3deg);
+    }
+}
+
+@keyframes itinerary-float-odd {
+    0%, 100% {
+        transform: rotate(-0.8deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-1.5deg) translateY(-5px);
+    }
+}
+
+@keyframes itinerary-float-even {
+    0%, 100% {
+        transform: rotate(0.8deg) translateY(0);
+    }
+    50% {
+        transform: rotate(1.5deg) translateY(-5px);
+    }
+}

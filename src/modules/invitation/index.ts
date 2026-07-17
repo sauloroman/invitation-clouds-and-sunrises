@@ -1,4 +1,7 @@
 export { Hero } from './hero/Hero'
 export { Location } from './location/Location'
 export { Presents } from './presents/Presents'
-export { DressCode } from './dress-code/DressCode' 
+export { DressCode } from './dress-code/DressCode'
+export { Itinerary } from './itinerary/Itinerary'
+export { Confirmation } from './confirmation/Confirmation'
+export { Farewell } from './farewell/Farewell'

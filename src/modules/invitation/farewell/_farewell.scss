@@ -1,0 +1,231 @@
+@use '@/scss/base/variables' as v;
+@use '@/scss/base/mixins' as m;
+
+.farewell {
+    position: relative;
+    padding: 20rem 0 0;
+    overflow: clip;
+    background-color: white;
+    text-align: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        max-width: 60rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__text {
+        p:first-child {
+            font-family: v.$font-heading;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: v.$purple-corallite-base;
+            margin: 0 0 1rem;
+            line-height: 1.3;
+
+            @media (max-width: 480px) {
+                font-size: 2.0rem;
+            }
+        }
+
+        p:last-child {
+            font-family: v.$font-heading;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: v.$purple-corallite-tint-200;
+            margin: 0;
+            line-height: 1.3;
+
+            @media (max-width: 480px) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__badge-wrapper {
+        position: relative;
+        width: fit-content;
+        margin-top: 1rem;
+        animation: farewell-badge-swing 5.5s ease-in-out infinite;
+    }
+
+    &__badge {
+        @include m.badge-title;
+    }
+
+    &__tendido {
+        display: block;
+        width: 34rem;
+        max-width: 90%;
+        height: auto;
+        margin: 4rem auto;
+        position: relative;
+        z-index: 2;
+        animation: farewell-garland-swing 6s ease-in-out infinite;
+
+        @media (max-width: 480px) {
+            width: 28rem;
+            margin: 3rem auto;
+        }
+    }
+
+    &__footer {
+        background-color: v.$purple-corallite-tint-800;
+        border-top: 2px dashed v.$purple-corallite-tint-400;
+        padding: 2.5rem 2rem;
+        margin-top: 6rem;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-text {
+            font-family: v.$font-body;
+            font-size: 1.4rem;
+            color: v.$purple-corallite-base;
+
+            a {
+                color: v.$purple-corallite-shade-200;
+                font-weight: 700;
+                text-decoration: none;
+                margin-left: 0.5rem;
+                transition: color 0.2s ease-in-out;
+
+                &:hover {
+                    color: v.$purple-corallite-shade-400;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    /* Puntos de colores en el fondo (dots) */
+    &__dot {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(1px);
+        opacity: 0.8;
+        animation: farewell-dot-pulse 4s ease-in-out infinite;
+
+        &:nth-child(even) {
+            animation-duration: 5s;
+            animation-delay: 0.8s;
+        }
+
+        &:nth-child(3n) {
+            animation-duration: 6s;
+            animation-delay: 1.5s;
+        }
+
+        &--1 {
+            top: 10%;
+            left: 10%;
+            background-color: v.$light-capri-green-tint-600;
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+
+        &--2 {
+            top: 22%;
+            right: 12%;
+            background-color: v.$pink-frosting-tint-400;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        &--3 {
+            top: 40%;
+            left: 8%;
+            background-color: v.$butter-yellow-tint-600;
+            width: 2.0rem;
+            height: 2.0rem;
+        }
+
+        &--4 {
+            top: 55%;
+            right: 8%;
+            background-color: v.$light-capri-green-tint-600;
+            width: 2.6rem;
+            height: 2.6rem;
+        }
+
+        &--5 {
+            bottom: 25%;
+            left: 12%;
+            background-color: v.$pink-frosting-tint-400;
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+
+        &--6 {
+            bottom: 35%;
+            right: 15%;
+            background-color: v.$butter-yellow-tint-600;
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        &--7 {
+            bottom: 12%;
+            left: 25%;
+            background-color: v.$light-capri-green-tint-600;
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+
+        &--8 {
+            top: 5%;
+            right: 30%;
+            background-color: v.$pink-frosting-tint-400;
+            width: 2.0rem;
+            height: 2.0rem;
+        }
+    }
+}
+
+/* Animaciones */
+@keyframes farewell-badge-swing {
+
+    0%,
+    100% {
+        transform: rotate(-1.5deg);
+    }
+
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+@keyframes farewell-garland-swing {
+
+    0%,
+    100% {
+        transform: rotate(-2deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(2deg) translateY(-4px);
+    }
+}
+
+@keyframes farewell-dot-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 0.45;
+    }
+}

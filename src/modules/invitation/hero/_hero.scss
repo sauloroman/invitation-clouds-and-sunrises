@@ -3,7 +3,7 @@
 
 .hero {
     position: relative;
-    height: 80dvh;
+    height: 85dvh;
     overflow: clip;
     background-color: v.$mist-yellow-tint-800;
     padding: 2rem;
@@ -12,48 +12,58 @@
 
     &__message {
         text-align: center;
-        font-family: v.$font-cursive;
-        font-size: 3rem;
+        font-family: v.$font-heading;
+        font-size: 2.4rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
         color: v.$purple-corallite-tint-200;
-        margin-bottom: 2rem;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
+
+        @media (max-width: 480px) {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
     }
 
     &__name {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: 1.5rem;
 
         &-text {
-            line-height: 1;
-            font-size: 5rem;
-            letter-spacing: 3px;
+            line-height: 1.2;
+            font-size: 4.8rem;
+            font-weight: 900;
+            letter-spacing: 1px;
             color: v.$purple-corallite-base;
-            font-family: v.$font-cursive;
+            font-family: v.$font-heading;
+            text-align: center;
+            text-shadow: 
+                3px 3px 0px v.$pink-frosting-base, 
+                6px 6px 0px rgba(99, 78, 147, 0.06);
 
             @media (max-width: 480px) {
-                font-size: 4rem;
+                font-size: 3.6rem;
+                text-shadow: 
+                    2px 2px 0px v.$pink-frosting-base, 
+                    4px 4px 0px rgba(99, 78, 147, 0.06);
             }
         }
 
-        &-text :nth-child(1) {
-            margin-left: -2rem;
-        }
-
-        &-text :nth-child(2) {
-            margin-right: -1rem;
-        }
-
-        &-cloud {
-            width: 18rem;
+        &-star {
+            width: 12rem;
             height: auto;
             object-fit: contain;
+            animation: hero-star-wobble 4s ease-in-out infinite;
 
             @media (max-width: 480px) {
-                width: 12rem;
+                width: 8rem;
             }
         }
     }
@@ -75,6 +85,7 @@
         position: relative;
         width: fit-content;
         margin-top: 3rem;
+        animation: hero-badge-swing 6s ease-in-out infinite;
     }
 
     &__butterfly {
@@ -86,6 +97,7 @@
         z-index: 2;
         transform: rotate(-10deg);
         pointer-events: none;
+        animation: hero-butterfly-purple 4.5s ease-in-out infinite;
     }
 
     &__butterfly-pink {
@@ -97,6 +109,7 @@
         z-index: 2;
         transform: rotate(15deg);
         pointer-events: none;
+        animation: hero-butterfly-pink 5s ease-in-out infinite 0.5s;
     }
 
     &__badge {
@@ -122,9 +135,8 @@
             display: block;
         }
 
-        &-balloon {
+        &-balloon-wrapper {
             position: absolute;
-            height: auto;
             pointer-events: none;
 
             &--yellow-left {
@@ -132,7 +144,6 @@
                 top: 25%;
                 width: 6rem;
                 z-index: 3;
-                transform: rotate(10deg);
             }
 
             &--green-left {
@@ -140,7 +151,6 @@
                 top: 10%;
                 width: 8rem;
                 z-index: 2;
-                transform: rotate(-10deg);
             }
 
             &--yellow-right {
@@ -148,7 +158,6 @@
                 top: 25%;
                 width: 6rem;
                 z-index: 3;
-                transform: rotate(-10deg);
             }
 
             &--green-right {
@@ -156,7 +165,33 @@
                 top: 10%;
                 width: 8rem;
                 z-index: 2;
+            }
+        }
+
+        &-balloon {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+
+            &--yellow-left {
                 transform: rotate(10deg);
+                animation: hero-balloon-float-1 5s ease-in-out infinite;
+            }
+
+            &--green-left {
+                transform: rotate(-10deg);
+                animation: hero-balloon-float-2 6s ease-in-out infinite 0.4s;
+            }
+
+            &--yellow-right {
+                transform: rotate(-10deg);
+                animation: hero-balloon-float-3 5.5s ease-in-out infinite 0.2s;
+            }
+
+            &--green-right {
+                transform: rotate(10deg);
+                animation: hero-balloon-float-4 6.5s ease-in-out infinite 0.7s;
             }
         }
 
@@ -235,8 +270,8 @@
         justify-content: center;
         align-items: center;
 
-        img {
-            width: 6rem;
+        &-cloud {
+            width: 10rem;
             opacity: .8;
         }
     }
@@ -248,6 +283,17 @@
         height: 2.6rem;
         filter: blur(1px);
         opacity: 0.8;
+        animation: hero-dot-pulse 4s ease-in-out infinite;
+
+        &:nth-child(even) {
+            animation-duration: 5s;
+            animation-delay: 0.8s;
+        }
+
+        &:nth-child(3n) {
+            animation-duration: 6s;
+            animation-delay: 1.5s;
+        }
 
         &--1 {
             top: 5%;
@@ -371,5 +417,216 @@
             width: 1.0rem;
             height: 1.0rem;
         }
+
+        &--17 {
+            top: 15%;
+            left: 3%;
+            background-color: v.$pink-frosting-tint-400;
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+
+        &--18 {
+            top: 8%;
+            left: 22%;
+            background-color: v.$butter-yellow-tint-600;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        &--19 {
+            top: 28%;
+            left: 9%;
+            background-color: v.$purple-corallite-tint-600;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        &--20 {
+            top: 38%;
+            left: 25%;
+            background-color: v.$butter-yellow-tint-600;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        &--21 {
+            top: 12%;
+            right: 16%;
+            background-color: v.$light-capri-green-tint-600;
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+
+        &--22 {
+            top: 18%;
+            right: 28%;
+            background-color: v.$butter-yellow-tint-600;
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+
+        &--23 {
+            top: 30%;
+            right: 10%;
+            background-color: v.$pink-frosting-tint-400;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        &--24 {
+            top: 38%;
+            right: 24%;
+            background-color: v.$light-capri-green-tint-600;
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+
+        &--25 {
+            bottom: 42%;
+            left: 5%;
+            background-color: v.$pink-frosting-tint-400;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        &--26 {
+            bottom: 30%;
+            left: 23%;
+            background-color: v.$purple-corallite-tint-600;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        &--27 {
+            bottom: 15%;
+            left: 10%;
+            background-color: v.$butter-yellow-tint-600;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        &--28 {
+            bottom: 45%;
+            right: 5%;
+            background-color: v.$pink-frosting-tint-400;
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+
+        &--29 {
+            bottom: 33%;
+            right: 22%;
+            background-color: v.$purple-corallite-tint-600;
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+
+        &--30 {
+            bottom: 18%;
+            right: 12%;
+            background-color: v.$butter-yellow-tint-600;
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+
+        &--31 {
+            top: 5%;
+            left: 35%;
+            background-color: v.$purple-corallite-tint-600;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        &--32 {
+            top: 4%;
+            right: 38%;
+            background-color: v.$light-capri-green-tint-600;
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+    }
+}
+
+@keyframes hero-star-wobble {
+    0%, 100% {
+        transform: scale(1) rotate(-8deg) translateY(0);
+    }
+    50% {
+        transform: scale(1.08) rotate(8deg) translateY(-6px);
+    }
+}
+
+@keyframes hero-balloon-float-1 {
+    0%, 100% {
+        transform: translateY(0) rotate(10deg) translateX(0);
+    }
+    50% {
+        transform: translateY(-8px) rotate(13deg) translateX(3px);
+    }
+}
+
+@keyframes hero-balloon-float-2 {
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg) translateX(0);
+    }
+    50% {
+        transform: translateY(-11px) rotate(-6deg) translateX(-4px);
+    }
+}
+
+@keyframes hero-balloon-float-3 {
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg) translateX(0);
+    }
+    50% {
+        transform: translateY(-9px) rotate(-13deg) translateX(-3px);
+    }
+}
+
+@keyframes hero-balloon-float-4 {
+    0%, 100% {
+        transform: translateY(0) rotate(10deg) translateX(0);
+    }
+    50% {
+        transform: translateY(-7px) rotate(7deg) translateX(3px);
+    }
+}
+
+@keyframes hero-butterfly-purple {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-10deg) scale(1);
+    }
+    50% {
+        transform: translate(-4px, -6px) rotate(-13deg) scale(1.04);
+    }
+}
+
+@keyframes hero-butterfly-pink {
+    0%, 100% {
+        transform: translate(0, 0) rotate(15deg) scale(1);
+    }
+    50% {
+        transform: translate(4px, -8px) rotate(11deg) scale(1.04);
+    }
+}
+
+@keyframes hero-badge-swing {
+    0%, 100% {
+        transform: rotate(-1.5deg);
+    }
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+@keyframes hero-dot-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.25);
+        opacity: 0.4;
     }
 }

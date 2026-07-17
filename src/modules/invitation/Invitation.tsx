@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, Location, Presents, DressCode } from './'
+import { Hero, Location, Presents, DressCode, Itinerary, Confirmation, Farewell } from './'
 
 export const Invitation: React.FC = () => {
     return (
@@ -8,6 +8,9 @@ export const Invitation: React.FC = () => {
             <Location />
             <Presents />
             <DressCode />
+            <Itinerary />
+            <Confirmation />
+            <Farewell />
         </div>
     )
 }

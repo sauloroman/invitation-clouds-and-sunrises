@@ -21,7 +21,8 @@
         position: relative;
         width: fit-content;
         margin: 0 auto;
-        margin-bottom: 4rem
+        margin-bottom: 4rem;
+        animation: presents-badge-swing 6s ease-in-out infinite;
     }
 
     &__badge {
@@ -39,11 +40,11 @@
     &__decoration {
         display: flex;
         justify-content: center;
+        animation: presents-decor-float 5s ease-in-out infinite;
 
         img {
             width: 15rem;
         }
-
     }
 
     &__item {
@@ -147,6 +148,18 @@
                 width: 8rem;
             }
         }
+
+        &--bear img {
+            animation: presents-bear-rock 5s ease-in-out infinite;
+        }
+
+        &--stroller img {
+            animation: presents-stroller-bounce 6s ease-in-out infinite;
+        }
+
+        &--sun img {
+            animation: presents-sun-pulse 7s ease-in-out infinite;
+        }
     }
 
     &__dot {
@@ -156,6 +169,17 @@
         height: 2.6rem;
         filter: blur(1px);
         opacity: 0.85;
+        animation: presents-dot-pulse 4s ease-in-out infinite;
+
+        &:nth-child(even) {
+            animation-duration: 5s;
+            animation-delay: 0.7s;
+        }
+
+        &:nth-child(3n) {
+            animation-duration: 6s;
+            animation-delay: 1.4s;
+        }
 
         &--1 {
             top: 8%;
@@ -252,5 +276,62 @@
             width: 2.2rem;
             height: 2.2rem;
         }
+    }
+}
+
+/* Animaciones del listado de consejos */
+@keyframes presents-decor-float {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+@keyframes presents-badge-swing {
+    0%, 100% {
+        transform: rotate(-1.5deg);
+    }
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+@keyframes presents-bear-rock {
+    0%, 100% {
+        transform: rotate(-4deg) scale(1);
+    }
+    50% {
+        transform: rotate(4deg) scale(1.05);
+    }
+}
+
+@keyframes presents-stroller-bounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+}
+
+@keyframes presents-sun-pulse {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(12deg) scale(1.06);
+    }
+}
+
+@keyframes presents-dot-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.45;
     }
 }

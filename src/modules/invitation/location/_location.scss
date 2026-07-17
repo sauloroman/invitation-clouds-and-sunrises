@@ -130,16 +130,20 @@
     &__nube {
         position: absolute;
         width: 16rem;
+        pointer-events: none;
 
         &--left {
             bottom: -5%;
             left: 0;
+            animation: location-cloud-float 6s ease-in-out infinite;
         }
 
         &--right {
             width: 10rem;
             top: 0%;
             right: 5%;
+            transform-origin: bottom center;
+            animation: location-balloon-sway 7s ease-in-out infinite;
         }
     }
 
@@ -153,4 +157,22 @@
         margin: 0 auto;
     }
 
+}
+
+@keyframes location-cloud-float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-8px) translateX(5px);
+    }
+}
+
+@keyframes location-balloon-sway {
+    0%, 100% {
+        transform: translate(0, 0) rotate(5deg);
+    }
+    50% {
+        transform: translate(-14px, -8px) rotate(-6deg);
+    }
 }
