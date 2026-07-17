@@ -47,7 +47,7 @@ export const Farewell: React.FC = () => {
 
             <footer className='farewell__footer'>
                 <span className='farewell__footer-text'>
-                    Hecha por amor por
+                    Hecha por amor con
                     <a href="https://www.instagram.com/tuamigoinvitaciones/" target="_blank" rel="noopener noreferrer">
                         TuAmigoInvitaciones
                     </a>

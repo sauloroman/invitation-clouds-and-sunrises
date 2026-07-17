@@ -1,0 +1,51 @@
+@use '@/scss/base/variables' as v;
+@use '@/scss/base/mixins' as m;
+
+.music-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 99;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8fa3 0%, #ff5c7a 100%);
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(255, 92, 122, 0.4);
+    transition: transform 0.2s;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+        transform: scale(1.08);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &--playing {
+        animation: pulse-slow 2s infinite ease-in-out;
+    }
+
+    svg {
+        width: 2.2rem;
+        height: 2.2rem;
+        display: block;
+    }
+}
+
+@keyframes pulse-slow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(255, 92, 122, 0.6);
+    }
+}

@@ -52,7 +52,6 @@ export const Hero: React.FC = () => {
                 <div className="hero__dot hero__dot--32"></div>
             </motion.div>
 
-            {/* Upper corner colorful balloons */}
             <motion.div
                 className="hero__corner-balloon hero__corner-balloon--left"
                 initial={{ opacity: 0, y: -100, x: -100, rotate: -35 }}
@@ -62,17 +61,7 @@ export const Hero: React.FC = () => {
                 <img src={globoColores} alt="Globo Colores Esquina Izquierda" />
             </motion.div>
 
-            <motion.div
-                className="hero__corner-balloon hero__corner-balloon--right"
-                initial={{ opacity: 0, y: -100, x: 100, rotate: 35 }}
-                animate={{ opacity: 1, y: 0, x: 0, rotate: 15 }}
-                transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.6 }}
-            >
-                <img src={globoColores} alt="Globo Colores Esquina Derecha" />
-            </motion.div>
-
             <div className="hero__container">
-                {/* 1. Header Message: slides down */}
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -82,7 +71,6 @@ export const Hero: React.FC = () => {
                     ¡Estás invitado!
                 </motion.div>
 
-                {/* 2. Birthday Child's Name/Title: zooms in with spring bounce */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.7, y: 15 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -91,11 +79,10 @@ export const Hero: React.FC = () => {
                 >
                     <div className="hero__name-text">
                         <img className='hero__name-star' src={numero} alt="Numero" />
-                        <p>Birthdate Party</p>
+                        <p>Mi Cumpleaños</p>
                     </div>
                 </motion.div>
 
-                {/* 3. Name Badge: spring bounce delay */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -3 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -112,7 +99,6 @@ export const Hero: React.FC = () => {
                     </div>
                 </motion.div>
 
-                {/* 4. Info Frame: scales up with spring bounce */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.85, y: 25 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -127,7 +113,6 @@ export const Hero: React.FC = () => {
                         <p className="hero__info-time">A las 3:00 p.m</p>
                     </div>
 
-                    {/* Staggered balloon animations popping out from behind the frame */}
                     <motion.div
                         className="hero__info-balloon-wrapper hero__info-balloon-wrapper--yellow-left"
                         initial={{ scale: 0, opacity: 0 }}
@@ -183,7 +168,6 @@ export const Hero: React.FC = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* 5. Bottom Cloud/Star: bounces up */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0, y: 15 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
