@@ -24,10 +24,12 @@
         &--left {
             top: 3%;
             left: -3rem;
+            width: 11.5rem;
             transform: rotate(-15deg);
             animation: hero-balloon-float-1 7s ease-in-out infinite;
 
             @media (max-width: 480px) {
+                width: 7.5rem;
                 left: -1rem;
                 top: 1%;
             }
@@ -183,78 +185,78 @@
 
             &--yellow-left {
                 left: 1.5rem;
-                top: 20%;
+                top: 30%;
                 width: 7rem;
                 z-index: 3;
 
                 @media (max-width: 480px) {
                     left: 1rem;
-                    top: 25%;
+                    top: 32%;
                     width: 5.5rem;
                 }
             }
 
             &--green-left {
                 left: -6.5rem;
-                top: -15%;
+                top: 5%;
                 width: 8.5rem;
                 z-index: 2;
 
                 @media (max-width: 480px) {
                     left: -3rem;
-                    top: -5%;
+                    top: 10%;
                     width: 6.5rem;
                 }
             }
 
             &--yellow-left-lower {
                 left: -5.5rem;
-                top: 30%;
+                top: 45%;
                 width: 6.5rem;
                 z-index: 4;
 
                 @media (max-width: 480px) {
                     left: -2.5rem;
-                    top: 35%;
+                    top: 45%;
                     width: 5rem;
                 }
             }
 
             &--yellow-right {
                 right: 1.5rem;
-                top: 20%;
+                top: 30%;
                 width: 7rem;
                 z-index: 3;
 
                 @media (max-width: 480px) {
                     right: 1rem;
-                    top: 25%;
+                    top: 32%;
                     width: 5.5rem;
                 }
             }
 
             &--green-right {
                 right: -6.5rem;
-                top: -15%;
+                top: 5%;
                 width: 8.5rem;
                 z-index: 2;
 
                 @media (max-width: 480px) {
                     right: -3rem;
-                    top: -5%;
+                    top: 10%;
                     width: 6.5rem;
                 }
             }
 
             &--yellow-right-lower {
                 right: -5.5rem;
-                top: 30%;
+                top: 45%;
                 width: 6.5rem;
                 z-index: 4;
 
                 @media (max-width: 480px) {
                     right: -2.5rem;
-                    top: 35%;
+                    top: 45%;
                     width: 5rem;
                 }
             }
